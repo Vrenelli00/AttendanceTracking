@@ -1,0 +1,21 @@
+# Database files
+*.frm
+*.ibd
+db.opt
+
+# Configuration files
+db_cofig.php
+test_connection.php
+
+# IDE settings
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variables
+.env

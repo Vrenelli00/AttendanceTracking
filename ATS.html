@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Attendance System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <div id="my-qr-reader"></div>
+        </div>
+        <div class="section results-container">
+            <h2>Scanned Attendance</h2>
+            <div class="results-wrapper">
+                <table id="result-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Time-In </th>
+                            <th>Time-Out</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Scanned data will be appended here -->
+                    </tbody>
+                </table>
+            </div>
+            <button class="export-button" onclick="openExportSection()">Export</button>
+        </div>
+    </div>
+    <div id="export-section">
+        <div class="login-container">
+            <input type="password" id="admin-password" class="login-input" placeholder="Enter Admin Password">
+            <button class="login-button" onclick="validateAdmin()">Login</button>
+        </div>
+        <h1>Exported Attendance Data</h1>
+        <table id="export-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Time-In</th>
+                    <th>Time-Out</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Exported data will be appended here -->
+            </tbody>
+        </table>
+        <button class="export-button" onclick="sortTableByLastName()">Sort by Last Name</button>
+        <button class="export-button" onclick="downloadExcel()">Download Excel</button>
+    </div>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.17.3/dist/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
